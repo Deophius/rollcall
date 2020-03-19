@@ -2,5 +2,5 @@
 
 int main()
 {
-    std::system("taskkill /im iMeeting.exe");
+    std::system("taskkill /f /im iMeeting.exe");
 }
