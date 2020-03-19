@@ -50,7 +50,7 @@ int main() {
     printf("Please make sure you have term.exe sticked to the task bar.\n");
     printf("Do you have it? Can you open it at any time?\n\n");
     {
-        int has_term = std::system("choice /C yn");
+        int has_term = std::system("choice /C yn /T 10 /D y");
         if (has_term != 1) {
             printf("Error: no term.exe. Cannot proceed.\n");
             return -1;
