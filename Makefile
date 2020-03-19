@@ -21,3 +21,8 @@ jumpstart.exe: main.cpp
 .PHONY: clean
 clean:
 	rm *.exe
+
+.PHONY: produce
+produce:
+	make all -j 4
+	cp *.exe bin/
