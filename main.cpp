@@ -17,7 +17,7 @@ int step_interval() {
     // Configure these variables for your use.
     // Maximum time for a cycle to complete. In milliseconds.
     // 20000 is the value that's for wxb as of 2020.3.18.
-    const int cycle_max = 20000;
+    const int cycle_max = 18000;
     int steps1 = (screen_end_x - screen_start_x) / x_step + 1;
     int steps2 = (screen_end_y - screen_start_y) / y_step + 1;
     long long total_steps = steps1 * steps2;
