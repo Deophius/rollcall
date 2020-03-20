@@ -4,8 +4,8 @@
 // Configure these variables for your use.
 // Default config is for screen with 1366 * 678.
 // Start of the region for madness clicking.
-const int screen_start_x = 110;
-const int screen_start_y = 140;
+const int screen_start_x = 190;
+const int screen_start_y = 250;
 // End of madness clicking.
 const int screen_end_x = 1070;
 const int screen_end_y = 720;
@@ -17,7 +17,7 @@ int step_interval() {
     // Configure these variables for your use.
     // Maximum time for a cycle to complete. In milliseconds.
     // 20000 is the value that's for wxb as of 2020.3.18.
-    const int cycle_max = 18000;
+    const int cycle_max = 10000;
     int steps1 = (screen_end_x - screen_start_x) / x_step + 1;
     int steps2 = (screen_end_y - screen_start_y) / y_step + 1;
     long long total_steps = steps1 * steps2;
