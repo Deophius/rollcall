@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <cstdio>
 
 // Configure these variables for your use.
 // Default config is for screen with 1366 * 678.
