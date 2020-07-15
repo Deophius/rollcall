@@ -33,9 +33,18 @@ int step_interval() {
 void do_clicking(int interval) {
     for (int i = screen_start_x; i <= screen_end_x; i += x_step) {
         for (int j = screen_start_y; j <= screen_end_y; j += y_step) {
+            // Prepare the input structures
+            INPUT inputs[2];
+            for (int k = 0; k < 2; k++) {
+                inputs[k].type = INPUT_MOUSE;
+                inputs[k].mi.dx = 0;
+                inputs[k].mi.dy = 0;
+            }
+            inputs[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+            inputs[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
             SetCursorPos(i, j);
-            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+            if (SendInput(2, inputs, sizeof(INPUT)) != 2)
+                MessageBeep(MB_ICONERROR);
             Sleep(interval);
         }
     }
