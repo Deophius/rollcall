@@ -1,6 +1,6 @@
 This is a tool to automatically cover a rectangle on the screen with repetitive clicking.
 First intentional use was against rollcall facility of wxb programs.
-Just a little junk, actually. Uses WinAPI's mouse_event() as the core of things.
+Just a little junk, actually. Uses WinAPI's SendInput() as the core of things.
 
 How to build:
 1. Make a bin/ directory.
@@ -9,7 +9,7 @@ How to build:
 What each file does:
   "jumpstart""rollcall" are quite similar. They are the core programs of the toolset.
   They cover a screen rectangle with mouse clickings by moving the mouse with SetCursorPos, and simulates clicking
-with mouse_event().
+with SendInput().
   The configuration variables are in click.h. The actual clicking function is there, too.
   Note that these two executables share the same source and differs in compilation by a preprocessor switch.
   "Rollcall" waits for 18s before starting the work. "Jumpstart" waits for 13s.
