@@ -30,7 +30,8 @@ int step_interval() {
     return ans;
 }
 
-void do_clicking(int interval) {
+// Return to "home base" after each click.
+void do_clicking(int interval, int homex, int homey) {
     for (int i = screen_start_x; i <= screen_end_x; i += x_step) {
         for (int j = screen_start_y; j <= screen_end_y; j += y_step) {
             // Prepare the input structures
@@ -45,6 +46,7 @@ void do_clicking(int interval) {
             SetCursorPos(i, j);
             if (SendInput(2, inputs, sizeof(INPUT)) != 2)
                 MessageBeep(MB_ICONERROR);
+            SetCursorPos(homex, homey);
             Sleep(interval);
         }
     }

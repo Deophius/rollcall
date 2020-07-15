@@ -32,7 +32,10 @@ int main() {
     }
     printf("You have 5 seconds to shut this app down.\n");
     Sleep(5000);
-    do do_clicking(interval);
+    // Action! First, get home
+    POINT home;
+    GetCursorPos(&home);
+    do do_clicking(interval, home.x, home.y);
     while (do_loop);
     return 0;
 }
