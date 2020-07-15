@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall
 .PHONY: all
 all: rollcall.exe term.exe report.exe killclass.exe jumpstart.exe
 
-rollcall.exe: main.cpp
+rollcall.exe: main.cpp click.h
 	g++ main.cpp -o rollcall $(CXXFLAGS)
 
 term.exe: term.cpp
@@ -15,7 +15,7 @@ report.exe: report.cpp
 killclass.exe: killclass.cpp
 	g++ killclass.cpp -o killclass $(CXXFLAGS)
 
-jumpstart.exe: main.cpp
+jumpstart.exe: main.cpp click.h
 	g++ main.cpp -o jumpstart -DJUMP_START $(CXXFLAGS)
 
 .PHONY: clean
@@ -24,5 +24,5 @@ clean:
 
 .PHONY: produce
 produce:
-	make all -j 4
+	$(MAKE) all
 	cp *.exe bin/
