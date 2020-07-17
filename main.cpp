@@ -1,4 +1,5 @@
 #include <windows.h>
+#include <thread>
 #include <cstdio>
 #include "click.h"
 
@@ -35,7 +36,10 @@ int main() {
     // Action! First, get home
     POINT home;
     GetCursorPos(&home);
-    do do_clicking(interval, home.x, home.y);
-    while (do_loop);
+    std::thread worker([do_loop, interval, home]{
+        do do_clicking(interval, home.x, home.y);
+        while (do_loop);
+    });
+    worker.join();
     return 0;
 }
