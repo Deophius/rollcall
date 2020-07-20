@@ -15,25 +15,22 @@ with SendInput().
   "Rollcall" waits for 18s before starting the work. "Jumpstart" waits for 13s.
   Each have a functionality called "development run", where the clicking will be done once.
   "Jumpstart" is more suitable for serious use.
-  
-  preclass.bat contains a command that must be run as root/admin. It activates WinuponService, so that the core
-  programs work correctly. If WinuponService is not running, core programs cannot work correctly.
-  
+
   report.exe reports the current mouse position. This is used to gather information and configure the program.
-  
+
   killclass.exe kills iMeeting.exe forcefully, in case it misbehaves.
-  
+
   term.exe terminates the core programs. It should be on the taskbar during class, so you can use Win+<num> key
   shortcut to access it.
-  
+
 How to configure:
-  The code assumes that the rectangle is (190, 250) to (1070, 720). This should work for a wxb session on a 
+  The code assumes that the rectangle is (190, 250) to (1070, 720). This should work for a wxb session on a
 1366*768 screen with chatting bar visible and toolbars hidden.
   Assumed size for the "confirm" button is 200*20 (horizontal * vertical).
   Assumed time for a rollcall confirmation to time out is 20s. But we use 10s to make sure that we don't miss
 the clicking when program first starts.
-  Assumed minimum time between clicks is 100ms. Otherwise, the mouse moving too quickly is suspicious, and it
-makes the system overloaded.
+  Assumed minimum time between clicks is 100ms. Otherwise, it might
+make the system overloaded.
   You can make changes to those variables easily, except for 100ms. Adjust the variables in click.h to suit
 your needs.
 
