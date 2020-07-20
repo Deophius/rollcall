@@ -19,7 +19,7 @@ int main() {
         }
     }
     #endif
-    int interval = step_interval();
+    int interval = Rollcall::step_interval();
     printf("Step interval is %d\n", interval);
     if (interval == -1) {
         return 1;
@@ -37,7 +37,7 @@ int main() {
     POINT home;
     GetCursorPos(&home);
     std::thread worker([do_loop, interval, home]{
-        do do_clicking(interval, home.x, home.y);
+        do Rollcall::do_clicking(interval, home.x, home.y);
         while (do_loop);
     });
     worker.join();
