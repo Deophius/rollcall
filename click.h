@@ -1,8 +1,9 @@
+#pragma once
 #include <windows.h>
 #include <cstdio>
 
 namespace Rollcall {
-
+    // Clicking errors are reminded with the error sound
     // Configure these variables for your use.
     // Default config is for screen with 1366 * 678.
     // Start of the region for madness clicking.

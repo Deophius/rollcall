@@ -4,6 +4,7 @@
 #include "click.h"
 
 int main() {
+    // Gather info
     printf("Starting rollcall manager...\n");
     printf("Your mouse will be controlled."
     " Please give appropriate permissions.\n");
