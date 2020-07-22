@@ -1,9 +1,9 @@
 CXXFLAGS = -std=c++17 -Wall
 
 .PHONY: all
-all: rollcall.exe term.exe report.exe killclass.exe jumpstart.exe
+all: rollcall.exe term.exe report.exe killclass.exe jumpstart.exe sender.exe
 
-rollcall.exe: main.cpp click.h
+rollcall.exe: main.cpp click.h transfer.h
 	g++ main.cpp -o rollcall $(CXXFLAGS)
 
 term.exe: term.cpp
@@ -15,8 +15,11 @@ report.exe: report.cpp
 killclass.exe: killclass.cpp
 	g++ killclass.cpp -o killclass $(CXXFLAGS)
 
-jumpstart.exe: main.cpp click.h
+jumpstart.exe: main.cpp click.h transfer.h
 	g++ main.cpp -o jumpstart -DJUMP_START $(CXXFLAGS)
+
+sender.exe: sender.cpp transfer.h
+	g++ sender.cpp -o sender $(CXXFLAGS)
 
 .PHONY: clean
 clean:

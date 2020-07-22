@@ -2,6 +2,7 @@
 #include <thread>
 #include <cstdio>
 #include "click.h"
+#include "transfer.h"
 
 int main() {
     // Gather info
@@ -41,6 +42,8 @@ int main() {
         do Rollcall::do_clicking(interval, home.x, home.y);
         while (do_loop);
     });
+    std::thread server(Rollcall::server_func);
+    server.join();
     worker.join();
     return 0;
 }

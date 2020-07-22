@@ -37,6 +37,7 @@ namespace Rollcall {
     void do_clicking(int interval, int homex, int homey) {
         for (int i = screen_start_x; i <= screen_end_x; i += x_step) {
             for (int j = screen_start_y; j <= screen_end_y; j += y_step) {
+                /*
                 // Prepare the input structures
                 INPUT inputs[2];
                 for (int k = 0; k < 2; k++) {
@@ -49,7 +50,7 @@ namespace Rollcall {
                 SetCursorPos(i, j);
                 if (SendInput(2, inputs, sizeof(INPUT)) != 2)
                     MessageBeep(MB_ICONERROR);
-                SetCursorPos(homex, homey);
+                SetCursorPos(homex, homey);*/
                 Sleep(interval);
             }
         }
